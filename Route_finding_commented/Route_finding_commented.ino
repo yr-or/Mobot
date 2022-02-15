@@ -2,6 +2,7 @@
 #define RIGHT 2
 
 #define LED RED_LED
+bool gotoFive=FALSE;
 int calibratedBlack = 600;
 bool left__turn;
 int lowMotor_turn = 25;
