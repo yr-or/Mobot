@@ -104,7 +104,7 @@ void turn180()
   digitalWrite(motor2Phase, HIGH); // forward
   analogWrite(motor2PWM, highMotor_turn); // set speed of motor
   unsigned long time = millis();
-  while ( (millis() < time+400) ){
+  while ( (millis() < time+750) ){
     continue;
   }
   while (true)
