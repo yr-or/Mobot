@@ -179,6 +179,10 @@ void gotoPosition()
 
 void goToFive()
 {
+  ignore_lines = 1;
+  not_halt = true;
+  followLine();
+  
   while (true)
   {
     if (i > 5)

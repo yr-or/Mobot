@@ -7,8 +7,8 @@ bool left__turn;
 int lowMotor_turn = 25;
 int highMotor_turn = 190;
 int lowMotor = 50;
-int highMotorLeft = 215;
-int highMotorRight = 220;
+int highMotorLeft = 220;
+int highMotorRight = 215;
 int AnalogValue[5] = {0, 0, 0, 0, 0};
 int AnalogPin[5] = {A14, A13, A11, A9, A6};
 int distanceSensorPin = A0;
@@ -17,6 +17,7 @@ int motor1PWM = 39;     // P2.6
 int motor1Phase = 40;   // P2.7
 int motor2PWM = 37;     // 5.6
 int motor2Phase = 38;   // 2.4
+bool not_halt = false;
 
 int sensorArray[10] = {0, 0, 0, 0, 0};
 int i = 0;

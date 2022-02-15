@@ -10,7 +10,10 @@ void followLine()
       //if not told to skip a junction and there is no programmed turn 
       if ( ignore_lines < 1 && junction_turn == NULL )
       {
-        halt();
+        if (not_halt == false)
+        {
+          halt();
+        }
         hitLine = TRUE;
         break;
       }
