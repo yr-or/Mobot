@@ -41,9 +41,6 @@ void setup()
   //calibratedBlack = calibrate_black_line();
   calibratedBlack = 600;
   connectToWiFi();
-  digitalWrite(RED_LED, HIGH);
-  delay(500);
-  digitalWrite(RED_LED, LOW);
 }
 
 void loop() 

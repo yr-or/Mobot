@@ -31,7 +31,6 @@ void forward() {
 
 // Turn left 90deg
 void left_turn() {
-  digitalWrite(RED_LED, HIGH);
   // Go forward a bit first
   unsigned long int time = millis();
   while ( (millis()<time+100)  )
@@ -55,11 +54,9 @@ void left_turn() {
       break;
     }
   }
-  digitalWrite(RED_LED, LOW);
 }
 //turn right 90 degrees
 void right_turn() {
-  digitalWrite(RED_LED, HIGH);
   // Go forward a bit first
   unsigned long int time = millis();
   while ( (millis()<time+100) )
@@ -83,7 +80,6 @@ void right_turn() {
       break;
     }
   }
-  digitalWrite(RED_LED, LOW);
 }
 
 //used to curve left with the track
