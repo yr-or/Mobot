@@ -4,16 +4,11 @@
 int calibrate(){
   read_Analog();
   int AnalogTotal=0;
-  for(int i = 0; i<5; i++){
-    if (i !== 0)
-    {
-      AnalogTotal += AnalogValue[i];
-    }
-  }
+  AnalogTotal += AnalogValue[0] + AnalogValue[4];
   return AnalogTotal;
 }
 
 //sets the calibrated value, with tolerance used to ensure the sensors operate correctly
 int calibrate_black_line(){
-  calibratedBlack=(calibrate()/4)-100;
+  calibratedBlack=(calibrate()/2)-100;
 }

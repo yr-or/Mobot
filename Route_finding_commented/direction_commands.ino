@@ -1,5 +1,7 @@
 //  waits at a line for a new instruction
 void halt() {
+  forward();
+  delay(100);
   analogWrite(motor1PWM, 0);
   analogWrite(motor2PWM, 0);
   
@@ -29,6 +31,7 @@ void forward() {
 
 // Turn left 90deg
 void left_turn() {
+  digitalWrite(RED_LED, HIGH);
   // Go forward a bit first
   unsigned long int time = millis();
   while ( (millis()<time+100)  )
@@ -47,14 +50,16 @@ void left_turn() {
   while (true)
   {
     read_Analog();
-    if (AnalogValue[2] < 600)
+    if (AnalogValue[2] < calibratedBlack)
     {
       break;
     }
   }
+  digitalWrite(RED_LED, LOW);
 }
 //turn right 90 degrees
 void right_turn() {
+  digitalWrite(RED_LED, HIGH);
   // Go forward a bit first
   unsigned long int time = millis();
   while ( (millis()<time+100) )
@@ -73,11 +78,12 @@ void right_turn() {
   while (true)
   {
     read_Analog();
-    if (AnalogValue[2] < 600)
+    if (AnalogValue[2] < calibratedBlack)
     {
       break;
     }
   }
+  digitalWrite(RED_LED, LOW);
 }
 
 //used to curve left with the track
@@ -104,13 +110,14 @@ void turn180()
   digitalWrite(motor2Phase, HIGH); // forward
   analogWrite(motor2PWM, highMotor_turn); // set speed of motor
   unsigned long time = millis();
-  while ( (millis() < time+400) ){
+  // turn for 600 millis
+  while ( (millis() < time+600) ){
     continue;
   }
   while (true)
   {
     read_Analog();
-    if (AnalogValue[2] < 600)
+    if (AnalogValue[2] < calibratedBlack)
     {
       break;
     }

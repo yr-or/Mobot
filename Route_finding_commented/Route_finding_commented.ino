@@ -2,13 +2,13 @@
 #define RIGHT 2
 
 #define LED RED_LED
-int calibratedBlack = 600;
+int calibratedBlack;
 bool left__turn;
 int lowMotor_turn = 25;
 int highMotor_turn = 190;
 int lowMotor = 50;
-int highMotorLeft = 220;
-int highMotorRight = 215;
+int highMotorLeft = 245;   // actually right I think
+int highMotorRight = 255;  // actually left I think
 int AnalogValue[5] = {0, 0, 0, 0, 0};
 int AnalogPin[5] = {A14, A13, A11, A9, A6};
 int distanceSensorPin = A0;
@@ -38,8 +38,12 @@ void setup()
   Serial.begin(9600);
   delay(500);
   read_Analog();
-  calibratedBlack = calibrate_black_line();
+  //calibratedBlack = calibrate_black_line();
+  calibratedBlack = 600;
   connectToWiFi();
+  digitalWrite(RED_LED, HIGH);
+  delay(500);
+  digitalWrite(RED_LED, LOW);
 }
 
 void loop() 

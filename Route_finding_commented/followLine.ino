@@ -58,16 +58,18 @@ void followLine()
     else if(AnalogValue[0] < calibratedBlack && AnalogValue[1]<calibratedBlack){
       left_turn();
     }
+
     
-    // If none are active, curve in opposite direction to previous turn
+    // If none are active, curve in same direction to previous turn
     else {
       if (left__turn == 1) {
-        right();
-      }
-      else {
         left();
       }
+      else {
+        right();
+      }
     }
+    
   }
   return;
 }
