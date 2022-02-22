@@ -18,6 +18,7 @@ int motor1Phase = 40;   // P2.7
 int motor2PWM = 37;     // 5.6
 int motor2Phase = 38;   // 2.4
 bool not_halt = false;
+bool first_go = true;
 
 int sensorArray[10] = {0, 0, 0, 0, 0};
 int i = 0;
@@ -35,7 +36,7 @@ bool hitLine = FALSE;
 void setup() 
 {
   Serial.begin(9600);
-  delay(1000);
+  delay(500);
   read_Analog();
   calibratedBlack = calibrate_black_line();
   connectToWiFi();

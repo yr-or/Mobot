@@ -11,18 +11,21 @@ void gotoPosition()
       switch ( destination )
       {
         case 1:
-          ignore_lines = 1;
+          if (first_go == true) { ignore_lines = 1; }
+          else { ignore_lines = 0; }
           junction_turn = LEFT;
           followLine();
           facing = LEFT;
           break;
         case 2:
-          ignore_lines = 2;
+          if (first_go == true) { ignore_lines = 2; }
+          else { ignore_lines = 1; }
           followLine();
           facing = LEFT;
           break;
         case 3:
-          ignore_lines=3;
+          if (first_go == true) { ignore_lines = 3; }
+          else { ignore_lines = 2; }
           followLine();
           facing = LEFT;
           break;
@@ -39,6 +42,9 @@ void gotoPosition()
           goToFive();
           break;
       }
+      if (first_go == true) { 
+        first_go = false; 
+        }
       break;
 
     case 1:
@@ -68,6 +74,7 @@ void gotoPosition()
           break;
         case 5:
           goToFive();
+          break;
       }
       break;
 

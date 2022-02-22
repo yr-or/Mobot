@@ -5,7 +5,7 @@ int calibrate(){
   read_Analog();
   int AnalogTotal=0;
   for(int i = 0; i<5; i++){
-    if (i != 2)
+    if (i !== 0)
     {
       AnalogTotal += AnalogValue[i];
     }
